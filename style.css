@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    background:rgb(5, 76, 184);
+}
+
+section {
+    text-align: center;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.titulo img {
+    height: 100px;
+    margin: 20px;
+}
+
+.texto , .botones {
+    margin: 20px;
+}
