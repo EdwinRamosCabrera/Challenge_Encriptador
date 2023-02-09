@@ -13,22 +13,43 @@
 <body>
     <header>
         <div class="titulo">
-            <img src="/imagenes/encriptar.png" alt=""><h1>Challenge One - Encriptador</h1>
+            <img src="/imagenes/encriptar.png" alt="logo-encriptar">
+            <h1>Challenge One - Encriptador</h1>
         </div>
     </header>
     <main>
         <section>
-            <div class="texto">
-                <input type="text" id="ingresar-texto" placeholder="Ingrese el texto aqui">
+            <div class="ingreso-texto">
+                <textarea name="ingresar-texto" id="ingresar-texto" cols="60" rows="5" placeholder="Ingrese el texto aqui"></textarea>
             </div>
             
             <div class="botones">
+                <img src="/imagenes/exclamation_icon.svg" alt="recomendación">
+                <p>Solo letras minusculas y sin acentos</p>
+                <br>
                 <button id="boton-encriptar">Encriptar</button>
                 <button id="boton-desencriptar">Desencriptar</button>
             </div>
         </section>
+        <section>
+            <div class="mensaje-vacio">
+                <img src="/imagenes/not-found.webp" alt="Not found">
+                <p class="mns-inicial">Ningun mensaje fue encontrado</p>
+                <p class="mns-recomendacion">Ingresa el texto que desees ara encriptar o desencriptar.</p>
+            </div>
+            <div class="mostrar-mensaje">
+                <textarea name="" id="" cols="60" rows="10"></textarea>
+            </div>
+        </section>
     </main>
     <footer>
+        <p>Edwin M. Ramos Cabrera</p>
+
+        <a href="#"><img class="icon-redes facebook" src="/imagenes/facebook logo_icon.svg" alt="Facebook"></a>
+        <a href="#"><img class="icon-redes github" src="/imagenes/github_icon.svg" alt="Github"></a>
+        <a href="#"><img class="icon-redes linkedIn" src="/imagenes/linkedin logo_icon.svg" alt="LinkedIn"></a>       
+        
+        <p>® ©Copyright Challenge Encriptador - Alura One G4 - 2023</p>
 
     </footer>
 </body>

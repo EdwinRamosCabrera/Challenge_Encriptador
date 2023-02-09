@@ -25,3 +25,15 @@ function encriptar() {
     console.log(arrayTexto);
 }
 
+const msg = new String("¡Si, tunpuedes hacerlo!");
+let str = "¡Si, tunpuedes hacerlo!";
+
+console.log(str[0]);
+console.log(str[1]);
+console.log(str[2]);
+console.log(str[3]);
+console.log(str[4]);
+
+let mensaje = 'Soy un tipo feliz y afortunado';
+let arr = mensaje.split(' ');
+console.log(arr);
