@@ -1,11 +1,23 @@
+let arrayTexto = [];
+let mensajeEncriptado;
+
 let botonEncriptar = document.getElementById('boton-encriptar');
 botonEncriptar.addEventListener('click', encriptar);
 
-function encriptar() {
-    let textoInput = document.getElementById('ingresar-texto').value;
-    console.log(textoInput)
+let mostrarEncriptacion = document.getElementById('mostrar-encriptacion');
+mostrarEncriptacion.style.display = 'none';
 
-    let arrayTexto = textoInput.split('');
+function encriptar() {
+
+    let sectionNoFound = document.getElementById('texto-vacio');
+    sectionNoFound.style.display = 'none';
+  
+    let mostrarEncriptacion = document.getElementById('mostrar-encriptacion');
+    mostrarEncriptacion.style.display = 'block';
+
+    let textoInput = document.getElementById('ingresar-texto').value;
+    
+    arrayTexto = textoInput.split('');
     console.log(arrayTexto);
 
     for (let i = 0; i < arrayTexto.length; i++) {
@@ -22,18 +34,20 @@ function encriptar() {
         }       
     }
 
+    document.getElementById('ingresar-texto').value = " ";
     console.log(arrayTexto);
+    
+    mensajeEncriptado = arrayTexto.join('');
+
+    console.log(mensajeEncriptado)
+
+    mostrarMensaje();
+
 }
 
-const msg = new String("¡Si, tunpuedes hacerlo!");
-let str = "¡Si, tunpuedes hacerlo!";
+function mostrarMensaje() {
 
-console.log(str[0]);
-console.log(str[1]);
-console.log(str[2]);
-console.log(str[3]);
-console.log(str[4]);
-
-let mensaje = 'Soy un tipo feliz y afortunado';
-let arr = mensaje.split(' ');
-console.log(arr);
+    let encriptacion = document.getElementById('mensaje-encriptado');
+    encriptacion.innerHTML = mensajeEncriptado;
+    
+}

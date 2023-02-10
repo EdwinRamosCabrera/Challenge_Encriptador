@@ -20,7 +20,7 @@
     <main>
         <section>
             <div class="ingreso-texto">
-                <textarea name="ingresar-texto" id="ingresar-texto" cols="60" rows="5" placeholder="Ingrese el texto aqui"></textarea>
+                <textarea name="ingresar-texto" id="ingresar-texto" cols="60" rows="5" autofocus placeholder="Ingrese el texto aqui"></textarea>
             </div>
             
             <div class="botones">
@@ -32,13 +32,15 @@
             </div>
         </section>
         <section>
-            <div class="mensaje-vacio">
+            <div id="texto-vacio">
                 <img src="/imagenes/not-found.webp" alt="Not found">
                 <p class="mns-inicial">Ningun mensaje fue encontrado</p>
                 <p class="mns-recomendacion">Ingresa el texto que desees ara encriptar o desencriptar.</p>
             </div>
-            <div class="mostrar-mensaje">
-                <textarea name="" id="" cols="60" rows="10"></textarea>
+            <div id="mostrar-encriptacion">
+                <h3>MENSAJE ENCRIPTADO:</h3>
+                <p id="mensaje-encriptado"></p>
+                <button id="boton-copiar">Copiar</button>
             </div>
         </section>
     </main>
