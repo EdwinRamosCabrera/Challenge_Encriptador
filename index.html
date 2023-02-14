@@ -28,7 +28,7 @@
                 <p>Solo letras minusculas y sin acentos</p>
                 <br>
                 <button id="boton-encriptar">Encriptar</button>
-                <button id="boton-desencriptar">Desencriptar</button>
+                <button id="boton-desencriptar" onclick="desEncriptar()">Desencriptar</button>
             </div>
         </section>
         <section>
@@ -39,8 +39,8 @@
             </div>
             <div id="mostrar-encriptacion">
                 <h3>MENSAJE ENCRIPTADO:</h3>
-                <p id="mensaje-encriptado"></p>
-                <button id="boton-copiar">Copiar</button>
+                    <textarea name="mns-encriptado" id="mensaje-encriptado" cols="60" rows="5"></textarea>
+                <button id="boton-copiar" onclick="copiarEncriptado()">Copiar</button>
             </div>
         </section>
     </main>
