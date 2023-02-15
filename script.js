@@ -3,6 +3,7 @@ let arrayMensaje = []
 let mensajeEncriptado
 let mensajeCopiado
 let mensajeDesencriptado
+let encriptacion
 
 let botonEncriptar = document.getElementById('boton-encriptar')
 botonEncriptar.addEventListener('click', encriptar)
@@ -50,7 +51,7 @@ function encriptar() {
 
 function mostrarMensaje() {
 
-    let encriptacion = document.getElementById('mensaje-encriptado')
+    encriptacion = document.getElementById('mensaje-encriptado')
     encriptacion.innerHTML = mensajeEncriptado
     
 }
@@ -65,9 +66,13 @@ function copiarEncriptado() {
 }
 
 function desEncriptar() {
+    let mensajeDesencriptado = document.querySelector('h3')
+    mensajeDesencriptado.innerHTML = "MENSAJE DESENCRIPTADO"
     let textoEncriptado = document.getElementById('ingresar-texto').value
     console.log(textoEncriptado)
-    arrayMensaje = textoEncriptado.split('ai')
-    console.log(arrayMensaje)
-    mensajeDesencriptado 
+    mensajeDesencriptado = textoEncriptado.replaceAll("ai", "a").replaceAll("enter", "e").replaceAll("imes", "i").replaceAll("ober", "o").replaceAll("ufat", "u")
+    console.log(mensajeDesencriptado)
+
+    mensajeCopiado.value = mensajeDesencriptado
+
 }
