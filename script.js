@@ -22,7 +22,7 @@ function encriptar() {
     let textoInput = document.getElementById('ingresar-texto').value
     
     arrayTexto = textoInput.split('')
-    console.log(arrayTexto);
+    console.log(arrayTexto);  // acerlo con swicth y tolowerCase
 
     for (let i = 0; i < arrayTexto.length; i++) {
         if(arrayTexto[i] == "a") {

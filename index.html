@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="website icon" type="png" href="imagenes/key.png">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Roboto+Mono&family=Rubik:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
    <script defer src="/script.js"></script>
     <title>Encriptador</title>
@@ -20,12 +21,9 @@
     <main>
         <section>
             <div class="ingreso-texto">
-                <textarea name="ingresar-texto" id="ingresar-texto" cols="60" rows="5" autofocus placeholder="Ingrese el texto aqui"></textarea>
-                <br>
-                <img src="/imagenes/exclamation_icon.svg" alt="recomendación">
-                <p>Solo letras minusculas y sin acentos</p>
+                <textarea name="ingresar-texto" id="ingresar-texto" cols="60" rows="7" autofocus placeholder="Ingrese el texto aqui"></textarea>
+                <p><img src="/imagenes/exclamation_icon.svg" alt="recomendación">&nbsp Solo letras minúsculas y sin acentos</p>
             </div>
-    
             <div class="botones">
                 <button id="boton-encriptar">Encriptar</button>
                 <button id="boton-desencriptar" onclick="desEncriptar()">Desencriptar</button>
@@ -35,23 +33,22 @@
             <div id="texto-vacio">
                 <img src="/imagenes/not-found.webp" alt="Not found">
                 <p class="mns-inicial">Ningun mensaje fue encontrado</p>
-                <p class="mns-recomendacion">Ingresa el texto que desees ara encriptar o desencriptar.</p>
+                <p class="mns-recomendacion">Ingresa el texto que desees para encriptar o desencriptar.</p>
             </div>
             <div id="mostrar-encriptacion">
                 <h3>MENSAJE ENCRIPTADO</h3>
-                    <textarea name="mns-encriptado" id="mensaje-encriptado" cols="60" rows="5"></textarea>
-                <button id="boton-copiar" onclick="copiarEncriptado()">Copiar</button>
+                <textarea name="mns-encriptado" id="mensaje-encriptado" cols="60" rows="7"></textarea>
+                <p><button id="boton-copiar" onclick="copiarEncriptado()">Copiar</button></p>
             </div>
         </section>
     </main>
     <footer>
-        <p>Edwin M. Ramos Cabrera</p>
 
         <a href="#"><img class="icon-redes facebook" src="/imagenes/facebook logo_icon.svg" alt="Facebook"></a>
         <a href="#"><img class="icon-redes github" src="/imagenes/github_icon.svg" alt="Github"></a>
         <a href="#"><img class="icon-redes linkedIn" src="/imagenes/linkedin logo_icon.svg" alt="LinkedIn"></a>       
         
-        <p>® ©Copyright Challenge Encriptador - Alura One G4 - 2023</p>
+        <p>© Copyright Edwin M. Ramos Cabrera - Challenge Encriptador - Alura One G4 - 2023</p>
 
     </footer>
 </body>
