@@ -20,6 +20,7 @@
     </header>
     <main>
         <section>
+            <h3>MENSAJE</h3>
             <div class="ingreso-texto">
                 <textarea name="ingresar-texto" id="ingresar-texto" cols="60" rows="7" autofocus placeholder="Ingrese el texto aqui"></textarea>
                 <p><img src="/imagenes/exclamation_icon.svg" alt="recomendación">&nbsp Solo letras minúsculas y sin acentos</p>
@@ -30,24 +31,26 @@
             </div>
         </section>
         <section>
+            <p id="alerta">El mensaje a sido copiado!!!</p>
             <div id="texto-vacio">
                 <img src="/imagenes/not-found.webp" alt="Not found">
                 <p class="mns-inicial">Ningun mensaje fue encontrado</p>
                 <p class="mns-recomendacion">Ingresa el texto que desees para encriptar o desencriptar.</p>
             </div>
             <div id="mostrar-encriptacion">
-                <h3>MENSAJE ENCRIPTADO</h3>
+                <h3 class="titulo-encriptacion">MENSAJE ENCRIPTADO</h3>
                 <textarea name="mns-encriptado" id="mensaje-encriptado" cols="60" rows="7"></textarea>
                 <p><button id="boton-copiar" onclick="copiarEncriptado()">Copiar</button></p>
             </div>
         </section>
     </main>
     <footer>
-
-        <a href="#"><img class="icon-redes facebook" src="/imagenes/facebook logo_icon.svg" alt="Facebook"></a>
-        <a href="#"><img class="icon-redes github" src="/imagenes/github_icon.svg" alt="Github"></a>
-        <a href="#"><img class="icon-redes linkedIn" src="/imagenes/linkedin logo_icon.svg" alt="LinkedIn"></a>       
-        
+        <div>
+            <a href="#"><img class="icon-redes facebook" src="/imagenes/facebook logo_icon.svg" alt="Facebook"></a>
+            <a href="#"><img class="icon-redes github" src="/imagenes/github_icon.svg" alt="Github"></a>
+            <a href="#"><img class="icon-redes linkedIn" src="/imagenes/linkedin logo_icon.svg" alt="LinkedIn"></a>
+        </div>    
+       
         <p>© Copyright Edwin M. Ramos Cabrera - Challenge Encriptador - Alura One G4 - 2023</p>
 
     </footer>

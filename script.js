@@ -11,13 +11,16 @@ botonEncriptar.addEventListener('click', encriptar)
 let mostrarEncriptacion = document.getElementById('mostrar-encriptacion')
 mostrarEncriptacion.style.display = 'none'
 
+let alerta = document.getElementById('alerta');
+alerta.style.display = 'none'
+
 function encriptar() {
 
     let sectionNoFound = document.getElementById('texto-vacio');
     sectionNoFound.style.display = 'none'
   
     let mostrarEncriptacion = document.getElementById('mostrar-encriptacion')
-    mostrarEncriptacion.style.display = 'block'
+    mostrarEncriptacion.style.display = 'flex'
 
     let textoInput = document.getElementById('ingresar-texto').value
     
@@ -50,7 +53,6 @@ function encriptar() {
 }
 
 function mostrarMensaje() {
-
     encriptacion = document.getElementById('mensaje-encriptado')
     encriptacion.innerHTML = mensajeEncriptado
     
@@ -60,13 +62,23 @@ function copiarEncriptado() {
     mensajeCopiado = document.getElementById('mensaje-encriptado')
     mensajeCopiado.select()
     document.execCommand('copy')
-    alert('copiado')
 
-    mensajeCopiado.value = " "
+    mensajeCopiado.value = ''
+    mostrarAlerta()
+    
+}
+
+function mostrarAlerta() {
+    alerta.style.display = 'flex'
+    setTimeout(ocultarAlerta, 1500)
+}
+
+function ocultarAlerta() {
+    alerta.style.display = 'none'
 }
 
 function desEncriptar() {
-    let mensajeDesencriptado = document.querySelector('h3')
+    let mensajeDesencriptado = document.querySelector('.titulo-encriptacion')
     mensajeDesencriptado.innerHTML = "MENSAJE DESENCRIPTADO"
     let textoEncriptado = document.getElementById('ingresar-texto').value
     console.log(textoEncriptado)
