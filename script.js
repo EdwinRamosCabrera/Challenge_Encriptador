@@ -23,6 +23,16 @@ function condicionEncriptar(){
     }   
 }
 
+function condicionDesencriptar(){
+    if(textoInput.value === ""){
+        alertTextoVacio();
+    } else if(textoInput.value.match(/^[a-z ]*$/) ) {
+        desEncriptar()
+    } else {
+        alertMayusculas()
+    }    
+}
+
 function encriptar() {
 
     let sectionNoFound = document.getElementById('texto-vacio');
@@ -78,14 +88,13 @@ function ocultarAlerta() {
     alerta.style.display = 'none'
 }
 
+
 function desEncriptar() {
     let mensajeDesencriptado = document.querySelector('.titulo-encriptacion')
     mensajeDesencriptado.innerHTML = "MENSAJE DESENCRIPTADO"
-    let textoEncriptado = document.getElementById('ingresar-texto').value
-    console.log(textoEncriptado)
-    mensajeDesencriptado = textoEncriptado.replaceAll("ai", "a").replaceAll("enter", "e").replaceAll("imes", "i").replaceAll("ober", "o").replaceAll("ufat", "u")
-    console.log(mensajeDesencriptado)
-
+  
+    mensajeDesencriptado = textoInput.value.replaceAll("ai", "a").replaceAll("enter", "e").replaceAll("imes", "i").replaceAll("ober", "o").replaceAll("ufat", "u")
+ 
     mensajeCopiado.value = mensajeDesencriptado
 
     textoInput.value = ''
@@ -95,7 +104,7 @@ function alertTextoVacio() {
     Swal.fire({
         icon: 'info',
         title: 'Oops...',
-        text: 'Campo vacio, por favor escribe un mensaje',
+        text: 'Campo vacio, por favor escribe algun texto',
       }) 
 }
 
