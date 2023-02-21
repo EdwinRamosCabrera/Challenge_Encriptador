@@ -5,14 +5,23 @@ let mensajeCopiado
 let mensajeDesencriptado
 let encriptacion
 
+let textoInput = document.getElementById('ingresar-texto')
+
 let botonEncriptar = document.getElementById('boton-encriptar')
-botonEncriptar.addEventListener('click', encriptar)
+botonEncriptar.addEventListener('click', condicionEncriptar)
 
 let mostrarEncriptacion = document.getElementById('mostrar-encriptacion')
 mostrarEncriptacion.style.display = 'none'
 
-let alerta = document.getElementById('alerta');
-alerta.style.display = 'none'
+function condicionEncriptar(){
+    if(textoInput.value === ""){
+        alertTextoVacio();
+    } else if(textoInput.value.match(/^[a-z ]*$/) ) {
+        encriptar()
+    } else {
+        alertMayusculas()
+    }   
+}
 
 function encriptar() {
 
@@ -21,56 +30,48 @@ function encriptar() {
   
     let mostrarEncriptacion = document.getElementById('mostrar-encriptacion')
     mostrarEncriptacion.style.display = 'flex'
-
-    let textoInput = document.getElementById('ingresar-texto').value
-    
-    arrayTexto = textoInput.split('')
-    console.log(arrayTexto);  // acerlo con swicth y tolowerCase
+   
+    arrayTexto = textoInput.value.split('')
+    console.log(arrayTexto);  
 
     for (let i = 0; i < arrayTexto.length; i++) {
-        if(arrayTexto[i] == "a") {
-            arrayTexto[i] = "ai"
-        } else if(arrayTexto[i] == "e") {
-            arrayTexto[i] = "enter"
-        } else if(arrayTexto[i] == "i") {
-            arrayTexto[i] = "imes"
-        } else if(arrayTexto[i] == "o") {
-            arrayTexto[i] = "ober"
-        } else if(arrayTexto[i] == "u") {
-            arrayTexto[i] = "ufat"
-        }       
+        switch (arrayTexto[i]) {
+            case "a":
+                arrayTexto[i] = "ai"
+                break;
+            case "e":
+                arrayTexto[i] = "enter"
+                break;
+            case "i":
+                arrayTexto[i] = "imes"
+                break;       
+            case "o":
+                arrayTexto[i] = "ober"
+                break; 
+            case "u":
+                arrayTexto[i] = "ufat"
+                break; 
+        }      
     }
 
-    document.getElementById('ingresar-texto').value = " "
-    console.log(arrayTexto)
+    textoInput.value = ''
     
     mensajeEncriptado = arrayTexto.join('')
 
-    console.log(mensajeEncriptado)
-
     mostrarMensaje();
-
 }
 
 function mostrarMensaje() {
     encriptacion = document.getElementById('mensaje-encriptado')
-    encriptacion.innerHTML = mensajeEncriptado
-    
+    encriptacion.innerHTML = mensajeEncriptado   
 }
 
 function copiarEncriptado() {
     mensajeCopiado = document.getElementById('mensaje-encriptado')
     mensajeCopiado.select()
     document.execCommand('copy')
-
     mensajeCopiado.value = ''
-    mostrarAlerta()
-    
-}
-
-function mostrarAlerta() {
-    alerta.style.display = 'flex'
-    setTimeout(ocultarAlerta, 1500)
+    textoCopiado() 
 }
 
 function ocultarAlerta() {
@@ -87,4 +88,34 @@ function desEncriptar() {
 
     mensajeCopiado.value = mensajeDesencriptado
 
+    textoInput.value = ''
 }
+
+function alertTextoVacio() {
+    Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: 'Campo vacio, por favor escribe un mensaje',
+      }) 
+}
+
+function alertMayusculas() {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No se permiten mayúsculas, caracteres especiales, ni acentos!',
+      }) 
+}
+
+function textoCopiado() {
+    Swal.fire({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'El texto ha sido Copiado!!!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+}
+
+
