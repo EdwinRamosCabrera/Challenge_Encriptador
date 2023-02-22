@@ -1,14 +1,16 @@
 let arrayTexto = []
 let arrayMensaje = []
 let mensajeEncriptado
-let mensajeCopiado
-let mensajeDesencriptado
 let encriptacion
-
-let textoInput = document.getElementById('ingresar-texto')
 
 let botonEncriptar = document.getElementById('boton-encriptar')
 botonEncriptar.addEventListener('click', condicionEncriptar)
+
+let textoInput = document.getElementById('ingresar-texto')
+
+let resultados = document.getElementById('resultados')
+
+let tituloEncriptacion = document.querySelector('.titulo-encriptacion')
 
 let mostrarEncriptacion = document.getElementById('mostrar-encriptacion')
 mostrarEncriptacion.style.display = 'none'
@@ -34,15 +36,15 @@ function condicionDesencriptar(){
 }
 
 function encriptar() {
+    tituloEncriptacion.innerHTML = "MENSAJE ENCRIPTADO"
 
-    let sectionNoFound = document.getElementById('texto-vacio');
+    let sectionNoFound = document.getElementById('indicaciones');
     sectionNoFound.style.display = 'none'
   
     let mostrarEncriptacion = document.getElementById('mostrar-encriptacion')
     mostrarEncriptacion.style.display = 'flex'
-   
+
     arrayTexto = textoInput.value.split('')
-    console.log(arrayTexto);  
 
     for (let i = 0; i < arrayTexto.length; i++) {
         switch (arrayTexto[i]) {
@@ -66,36 +68,22 @@ function encriptar() {
 
     textoInput.value = ''
     
-    mensajeEncriptado = arrayTexto.join('')
-
-    mostrarMensaje();
-}
-
-function mostrarMensaje() {
-    encriptacion = document.getElementById('mensaje-encriptado')
-    encriptacion.innerHTML = mensajeEncriptado   
+    resultados.value =  arrayTexto.join('')
 }
 
 function copiarEncriptado() {
-    mensajeCopiado = document.getElementById('mensaje-encriptado')
-    mensajeCopiado.select()
+    resultados.select()
     document.execCommand('copy')
-    mensajeCopiado.value = ''
+    resultados.value = ''
     textoCopiado() 
 }
 
-function ocultarAlerta() {
-    alerta.style.display = 'none'
-}
-
-
 function desEncriptar() {
-    let mensajeDesencriptado = document.querySelector('.titulo-encriptacion')
-    mensajeDesencriptado.innerHTML = "MENSAJE DESENCRIPTADO"
-  
+    tituloEncriptacion.innerHTML = "MENSAJE DESENCRIPTADO"
+
     mensajeDesencriptado = textoInput.value.replaceAll("ai", "a").replaceAll("enter", "e").replaceAll("imes", "i").replaceAll("ober", "o").replaceAll("ufat", "u")
  
-    mensajeCopiado.value = mensajeDesencriptado
+    resultados.value = mensajeDesencriptado
 
     textoInput.value = ''
 }

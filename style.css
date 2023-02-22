@@ -120,12 +120,12 @@ button:active {
     height: 2.3rem;
 }
 
-#texto-vacio img {
+#indicaciones img {
     height: 28rem;
     width: 23rem;
 }
 
-.mns-inicial {
+.mns-error {
     font-weight: bold;
     font-size: 1.3rem;
 }
